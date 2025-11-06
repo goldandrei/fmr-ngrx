@@ -10,36 +10,7 @@ import { OrdersActions } from '../../store/orders/orders.action';
   selector: 'app-user-orders',
   standalone: true,
   imports: [CommonModule, FormsModule],
-  //   template: `
-  //   <h3>Selected user</h3>
 
-  //   <ng-container *ngIf="user(); else none">
-  //     <p class="meta">Name: <b>{{ user()?.name }}</b></p>
-  //     <p class="meta">Total orders sum: <b>{{ total() }}</b></p>
-
-  //     <h4>Orders</h4>
-  //     <ul>
-  //       <li *ngFor="let o of orders(); trackBy: trackByOrderId">
-  //         <span>#{{ o.id }} — {{ o.total }}</span>
-  //         <button (click)="remove(o.id)">Delete</button>
-  //       </li>
-  //     </ul>
-
-  //     <form (ngSubmit)="add()">
-  //       <input type="number"
-  //              [(ngModel)]="newTotal"
-  //              name="total"
-  //              placeholder="Order total"
-  //              min="1" step="1" />
-  //       <button type="submit"
-  //               [disabled]="selectedId() == null || !newTotal || newTotal <= 0">
-  //         Add Order
-  //       </button>
-  //     </form>
-  //   </ng-container>
-
-  //   <ng-template #none><i class="meta">No user selected</i></ng-template>
-  // `,
   template: `
   <h3>Selected user</h3>
 

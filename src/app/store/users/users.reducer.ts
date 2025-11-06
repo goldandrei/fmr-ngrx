@@ -5,14 +5,14 @@ import { UsersActions } from './users.actions';
 
 export interface UsersState extends EntityState<User> {
     selectedUserId: number | null;
-    lastDetailsUserId: number | null;   // NEW;
+    lastDetailsUserId: number | null;
 }
 
 export const usersAdapter = createEntityAdapter<User>();
 
 const initialState: UsersState = usersAdapter.getInitialState({
     selectedUserId: null,
-    lastDetailsUserId: null,            // NEW
+    lastDetailsUserId: null,
 });
 
 export const usersReducer = createReducer(
@@ -42,10 +42,7 @@ export const usersReducer = createReducer(
 
         return s;
     }),
-    // on(UsersActions.selectUser, (state, { userId }) => ({ ...state, selectedUserId: userId })),
-    // on(UsersActions.loadUserDetailsSuccess, (state, { userId, details }) =>
-    //     usersAdapter.updateOne({ id: userId, changes: { details } }, state)
-    // ),
+
     on(UsersActions.loadUserDetailsSuccess, (state, { userId, details }) => {
         let s = state;
 
